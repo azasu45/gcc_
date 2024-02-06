@@ -1,0 +1,10 @@
+{
+    "C_Cpp.errorSquiggles": "enabledIfIncludesResolve",
+    "files.associations": {
+        "*.html": "html",
+        "*.css": "tailwindcss",
+        "*.svelte": "svelte",
+        "vector": "cpp",
+        "ostream": "cpp"
+    }
+}
