@@ -1,23 +1,19 @@
-cmake_minimum_required(VERSION 3.25.0)
-project(app VERSION 0.1.0 LANGUAGES C CXX)
+cmake_minimum_required(VERSION 3.25)
 
-configure_file( 
-    "${PROJECT_SOURCE_DIR}/cmake/config.h.in"
-    "${PROJECT_BINARY_DIR}/config.h")
+set(CMAKE_CXX_STANDARD 11)
 
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-include(CTest)
-
-enable_testing()
+project(App VERSION 0.1.0 LANGUAGES C CXX)
 
 add_subdirectory(lib)
 
-add_executable(proyecto main.cpp)
+enable_testing()
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
-
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-
+include(CTest)
 include(CPack)
+add_executable(App src/main.cpp)
+
+target_link_libraries(App PUBLIC NodeLib)
+
+target_include_directories(App PUBLIC "${PROJECT_BINARY_DIR}")

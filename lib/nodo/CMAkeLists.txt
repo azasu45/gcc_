@@ -1,5 +1,0 @@
-add_library(lib_nodo SHARED Nodo.h)
-
-set_target_properties(lib_nodo PROPERTIES LINKER_LANGUAGE CXX)
-
-target_include_directories(lib_nodo PUBLIC ${CMAKE_CURRENT_LIST_DIR})
