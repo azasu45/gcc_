@@ -1,5 +1,4 @@
 #include "Node.h"
-
 /**
  * GetInfo function returns the information stored in the Node.
  *
